@@ -79,10 +79,10 @@ class Room(core_models.TimeStampedModel):
 
     def total_rating(self):
         all_reviews = self.reviews.all()
-        all_rating = []
+        all_rating = 0
         for review in all_reviews:
-            all_rating.append(review.rating_average())
-        return 0
+            all_rating += review.rating_average()
+        return all_rating / len(all_reviews)
 
 
 class Photo(core_models.TimeStampedModel):
