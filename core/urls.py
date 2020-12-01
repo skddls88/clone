@@ -1,8 +1,6 @@
 from django.urls import path
-from room import views as room_views
+from rooms import views as room_views
 
-add_name = "core"
+app_name = "core"
 
-urlpatterns = [
-    path("", room_views.all_rooms, name="home"),
-]
+urlpatterns = [path("", room_views.all_rooms, name="home")]
