@@ -50,7 +50,7 @@ class RoomAdmin(admin.ModelAdmin):
         ),
         (
             "Last Details",
-            {"fields": ("host",)},
+            {"fields": ("superhost",)},
         ),
     )
 
@@ -72,7 +72,7 @@ class RoomAdmin(admin.ModelAdmin):
 
     list_filter = (
         "instant_book",
-        "host__superhost",
+        "superhost__superhost",
         "room_type",
         "amenities",
         "facilities",
@@ -81,7 +81,7 @@ class RoomAdmin(admin.ModelAdmin):
         "country",
     )
 
-    raw_id_fields = ("host",)
+    raw_id_fields = ("superhost",)
 
     # ordering = (
     #     "name",
@@ -89,7 +89,7 @@ class RoomAdmin(admin.ModelAdmin):
     #     "bedrooms",
     # )
 
-    search_fields = ("=city", "^host__username")
+    search_fields = ("=city", "^superhost__username")
 
     filter_horizontal = (
         "amenities",
