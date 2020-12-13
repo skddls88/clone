@@ -1,3 +1,4 @@
+import os
 from django.views import View
 from django.views.generic import FormView
 from django.urls import reverse_lazy
@@ -62,3 +63,15 @@ class SignUpView(FormView):
             login(self.request, user)
         # user.verify_email()
         return super().form_valid(form)
+
+
+def github_login(request):
+    client_id = os.environ.get("GH_ID")
+    redirect_url = "http://127.0.0.1:8000/users/login/github/callback"
+    return redirect(
+        f"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_url={redirect_url}&scope=read:user"
+    )
+
+
+def github_callback(request):
+    pass
