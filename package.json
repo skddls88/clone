@@ -1,0 +1,14 @@
+{
+  "name": "clone",
+  "version": "1.0.0",
+  "description": "Cloning Airbnb with Python, Django, Tailwind and more...",
+  "scripts": {
+    "css":"gulp"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skddls88/clone.git"
+  },
+  "homepage": "https://github.com/skddls88/clone#readme"
+}
