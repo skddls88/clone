@@ -155,7 +155,6 @@ def kakao_callback(request):
         )
         token_json = token_request.json()
         error = token_json.get("error", None)
-        print(error)
         if error is not None:
             raise KakaoException
         access_token = token_json.get("access_token")
