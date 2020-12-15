@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <!-- <link rel="stylesheet" href="{% static "css/styles.css" %}"> -->
     <title>{% block page_title %}{% endblock page_title %} | Nbnb</title>
 </head>
 <body class="text-gray-800">
@@ -16,7 +16,7 @@
             
             {% block search-bar %}
             <form method="get" action="{% url "rooms:search" %}">
-                <input class="border px-2 py-1 rounded-lg" name="city" placeholder="Search for city">
+                <input class="search-box border px-5 text-sm font-medium text-gray-900 placeholder-gray-600 py-2 rounded-lg w-64 shadow-md hover:shadow-lg focus:outline-none" name="city" placeholder="Search for city">
             </form>
             {% endblock search-bar %}
         </div>
