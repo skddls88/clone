@@ -8,7 +8,7 @@
     {{room.country}}
 </div>
 <div>
-    <h2>By: {{room.host.username}} 
+    <h2>By: <a href="{{room.superhost.get_absolute_url}}">{{room.superhost.username}}</a>
     {% if room.host.superhost %}
         (superhost)
     {% endif %}
